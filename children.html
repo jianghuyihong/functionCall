@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./stylesheet/callFunction.css">
+    <script src="./javascript/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    子页面1内容
+    <div><span onclick="callParent()" class="btn">调父页面函数</span></div>
+    <div><span onclick="CallparentOther()" class="btn">获取子页面二元素点击事件</span></div>
+    <div><span id="child" onclick="childrenFn()" class="btn">子页面一被父页面调用</span></div>
+</body>
+<script>
+    //调用父页面
+    let callParent = () => {
+        parent.window.childrenCall();
+    }
+
+    //调用父页面
+    let CallparentOther = () => {
+        parent.window.CallchildrenOther();
+    }
+
+    //被父页面调用
+    let childrenFn = () => {
+        alert($("#child").html());
+    }
+</script>
+
+</html>
